@@ -1,0 +1,203 @@
+---
+
+---
+
+<section class="about-me-section">
+	<div class="background-image"></div>
+	<div class="content-overlay">
+		<div class="content-block">
+			<h2 class="main-title">
+				NĚCO O <span class="highlight-me">MNĚ</span>, NĚCO O <span class="highlight-you">VÁS</span>
+			</h2>
+			
+			<div class="story-section">
+				<h3 class="subheading">MILUJI DOBRÝ PŘÍBĚH</h3>
+				<p class="story-text">
+					Každý pár má svůj jedinečný příběh, který si zaslouží být zachycen autenticky. Jsem vášnivá v objevování těch <strong>opravdových okamžiků</strong> a <em>neinscenovaných emocí</em>, které dělají váš příběh lásky skutečně vaším. Můj přístup je o vytvoření příjemné atmosféry, kde můžete <u>být sami sebou</u>.
+				</p>
+			</div>
+			
+			<div class="you-section">
+				<h3 class="subheading">VY: TI NEKONVENČNÍ</h3>
+				<p class="you-text">
+					Nechcete tuctové svatební fotografie. Toužíte po něčem <strong>opravdovém</strong>, co odráží vaši osobnost a jedinečné spojení, které spolu sdílíte. Oceňujete <em>kreativitu před konvencí</em> a nebojíte se porušit tradice, abyste vytvořili něco výjimečně krásného.
+				</p>
+			</div>
+			
+			<button class="cta-button">
+				VÍCE O MNĚ →
+			</button>
+		</div>
+	</div>
+</section>
+
+<style>
+	.about-me-section {
+		position: relative;
+		height: 100vh;
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		overflow: hidden;
+	}
+
+	.background-image {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+		z-index: 1;
+	}
+
+	.content-overlay {
+		position: relative;
+		z-index: 2;
+		width: 100%;
+		height: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 2rem;
+	}
+
+	.content-block {
+		background: rgba(0, 0, 0, 0.6);
+		padding: 3rem;
+		border-radius: 0.5rem;
+		max-width: 48rem;
+		width: 100%;
+		text-align: center;
+		color: #FFFFFF;
+	}
+
+	.main-title {
+		font-size: 2.5rem;
+		font-weight: 800;
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+		margin-bottom: 2rem;
+		line-height: 1.2;
+	}
+
+	.highlight-me {
+		color: #FFC700;
+		text-decoration: underline;
+	}
+
+	.highlight-you {
+		color: #FFC700;
+		text-decoration: underline;
+	}
+
+	.story-section,
+	.you-section {
+		margin-bottom: 2rem;
+	}
+
+	.subheading {
+		color: #FFC700;
+		font-size: 1.25rem;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+		margin-bottom: 1rem;
+	}
+
+	.story-text,
+	.you-text {
+		font-size: 1.1rem;
+		line-height: 1.6;
+		margin-bottom: 1.5rem;
+		color: #FFFFFF;
+	}
+
+	.story-text strong,
+	.you-text strong {
+		font-weight: 700;
+		color: #FFC700;
+	}
+
+	.story-text em,
+	.you-text em {
+		font-style: italic;
+		color: #FFC700;
+	}
+
+	.story-text u,
+	.you-text u {
+		text-decoration: underline;
+		color: #FFC700;
+	}
+
+	.cta-button {
+		background: #FFC700;
+		color: #000000;
+		font-weight: 700;
+		text-transform: uppercase;
+		padding: 0.75rem 1.5rem;
+		border-radius: 0.375rem;
+		border: none;
+		cursor: pointer;
+		font-size: 1rem;
+		letter-spacing: 0.025em;
+		width: 100%;
+		transition: all 0.3s ease;
+	}
+
+	.cta-button:hover {
+		background: #E6B300;
+		transform: translateY(-2px);
+		box-shadow: 0 4px 12px rgba(255, 199, 0, 0.3);
+	}
+
+	@media (min-width: 640px) {
+		.cta-button {
+			width: auto;
+			padding: 0.75rem 2rem;
+		}
+	}
+
+	@media (max-width: 768px) {
+		.content-block {
+			padding: 2rem;
+		}
+		
+		.main-title {
+			font-size: 2rem;
+		}
+		
+		.subheading {
+			font-size: 1.1rem;
+		}
+		
+		.story-text,
+		.you-text {
+			font-size: 1rem;
+		}
+	}
+
+	@media (max-width: 480px) {
+		.content-block {
+			padding: 1.5rem;
+		}
+		
+		.main-title {
+			font-size: 1.75rem;
+		}
+		
+		.subheading {
+			font-size: 1rem;
+		}
+		
+		.story-text,
+		.you-text {
+			font-size: 0.9rem;
+		}
+	}
+</style>
