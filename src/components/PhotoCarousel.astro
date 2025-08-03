@@ -1,0 +1,265 @@
+---
+
+---
+
+<section class="photo-carousel-section">
+	<div class="carousel-container">
+		<div class="carousel-track" id="carouselTrack">
+			<!-- Slide 1: Wedding Photos -->
+			<div class="carousel-slide active">
+				<div class="slide-content">
+					<div class="slide-image">
+						<img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=600&h=800&fit=crop&crop=faces" alt="Svatební fotografie" />
+					</div>
+					<div class="slide-text">
+						<h3>Svatební fotografie</h3>
+						<p>Zachycuji nejkrásnější okamžiky vašeho velkého dne. Od příprav nevěsty až po poslední tanec, každý detail je důležitý. Moje svatební fotografie vypráví příběh vaší lásky přirozeně a autenticky.</p>
+						<p>Specializuji se na candid momenty, které si budete pamatovat navždy - smích, slzy štěstí a všechny ty malé gesta, která dělají váš den jedinečným.</p>
+					</div>
+				</div>
+			</div>
+
+			<!-- Slide 2: Couples Photos -->
+			<div class="carousel-slide">
+				<div class="slide-content">
+					<div class="slide-image">
+						<img src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=600&h=800&fit=crop&crop=faces" alt="Párové fotografie" />
+					</div>
+					<div class="slide-text">
+						<h3>Párové fotografie</h3>
+						<p>Vaše láska si zaslouží být zachycena v nejkrásnějším světle. Ať už se jedná o zásnubní focení, výročí nebo jen tak pro radost - vytváříme společně fotografie, které budete milovat.</p>
+						<p>Mým cílem je, abyste se před objektivem cítili uvolněně a přirozeně. Výsledkem jsou intimní a emotivní snímky, které odrážejí vaši jedinečnou chemii.</p>
+					</div>
+				</div>
+			</div>
+
+			<!-- Slide 3: Family & Kids Photos -->
+			<div class="carousel-slide">
+				<div class="slide-content">
+					<div class="slide-image">
+						<img src="https://images.unsplash.com/photo-1511895426328-dc8714191300?w=600&h=800&fit=crop&crop=faces" alt="Rodinné a dětské fotografie" />
+					</div>
+					<div class="slide-text">
+						<h3>Rodinné a dětské fotografie</h3>
+						<p>Dětství rychle utíká a rodinné okamžiky jsou k nezaplacení. Zachycuji přirozené interakce, spontánní smích a tu zvláštní magii, kterou má každá rodina.</p>
+						<p>Při focení s dětmi používám hravý přístup, který zajistí, že se všichni budou bavit. Výsledkem jsou autentické fotografie plné života a radosti.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Navigation dots -->
+		<div class="carousel-dots">
+			<button class="dot active" data-slide="0"></button>
+			<button class="dot" data-slide="1"></button>
+			<button class="dot" data-slide="2"></button>
+		</div>
+	</div>
+</section>
+
+<style>
+	.photo-carousel-section {
+		background: #F8F5F0;
+		padding: 0 2rem 6rem 2rem;
+		min-height: 100vh;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin: 0;
+		margin-top: -12rem;
+	}
+
+	.carousel-container {
+		max-width: 1200px;
+		width: 100%;
+		position: relative;
+		overflow: hidden;
+	}
+
+	.carousel-track {
+		display: flex;
+		transition: transform 0.6s ease-in-out;
+		width: 300%;
+	}
+
+	.carousel-slide {
+		width: 33.333%;
+		flex-shrink: 0;
+		opacity: 0;
+		transition: opacity 0.6s ease-in-out;
+	}
+
+	.carousel-slide.active {
+		opacity: 1;
+	}
+
+	.slide-content {
+		display: flex;
+		align-items: center;
+		gap: 4rem;
+		height: 600px;
+	}
+
+	.slide-image {
+		flex: 1;
+		height: 100%;
+	}
+
+	.slide-image img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		border-radius: 8px;
+		box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+	}
+
+	.slide-text {
+		flex: 1;
+		padding: 2rem;
+		color: #1C1C1C;
+	}
+
+	.slide-text h3 {
+		font-size: 2.5rem;
+		font-weight: 900;
+		text-transform: uppercase;
+		margin-bottom: 2rem;
+		color: #911B1B;
+		position: relative;
+	}
+
+	.slide-text h3::after {
+		content: '';
+		position: absolute;
+		bottom: -8px;
+		left: 0;
+		width: 60px;
+		height: 4px;
+		background: #F4C542;
+		border-radius: 2px;
+	}
+
+	.slide-text p {
+		font-size: 1.1rem;
+		line-height: 1.7;
+		margin-bottom: 1.5rem;
+		color: #1C1C1C;
+	}
+
+	.carousel-dots {
+		display: flex;
+		justify-content: center;
+		gap: 1rem;
+		margin-top: 3rem;
+	}
+
+	.dot {
+		width: 12px;
+		height: 12px;
+		border-radius: 50%;
+		border: none;
+		background: #E0E0E0;
+		cursor: pointer;
+		transition: all 0.3s ease;
+	}
+
+	.dot.active {
+		background: #911B1B;
+		transform: scale(1.2);
+	}
+
+	.dot:hover {
+		background: #F4C542;
+	}
+
+	@media (max-width: 768px) {
+		.photo-carousel-section {
+			padding: 4rem 1.5rem;
+		}
+
+		.slide-content {
+			flex-direction: column;
+			gap: 2rem;
+			height: auto;
+			text-align: center;
+		}
+
+		.slide-image {
+			height: 400px;
+		}
+
+		.slide-text {
+			padding: 1rem;
+		}
+
+		.slide-text h3 {
+			font-size: 2rem;
+		}
+
+		.slide-text p {
+			font-size: 1rem;
+		}
+	}
+
+	@media (max-width: 480px) {
+		.slide-text h3 {
+			font-size: 1.8rem;
+		}
+
+		.slide-image {
+			height: 300px;
+		}
+	}
+</style>
+
+<script>
+	class PhotoCarousel {
+		constructor() {
+			this.currentSlide = 0;
+			this.slides = document.querySelectorAll('.carousel-slide');
+			this.dots = document.querySelectorAll('.dot');
+			this.track = document.getElementById('carouselTrack');
+			
+			this.init();
+		}
+
+		init() {
+			// Add click listeners to dots
+			this.dots.forEach((dot, index) => {
+				dot.addEventListener('click', () => this.goToSlide(index));
+			});
+
+			// Auto-rotate every 5 seconds
+			setInterval(() => {
+				this.nextSlide();
+			}, 5000);
+		}
+
+		goToSlide(slideIndex) {
+			// Remove active class from current slide and dot
+			this.slides[this.currentSlide].classList.remove('active');
+			this.dots[this.currentSlide].classList.remove('active');
+
+			// Update current slide
+			this.currentSlide = slideIndex;
+
+			// Add active class to new slide and dot
+			this.slides[this.currentSlide].classList.add('active');
+			this.dots[this.currentSlide].classList.add('active');
+
+			// Move the track
+			const translateX = -slideIndex * 33.333;
+			this.track.style.transform = `translateX(${translateX}%)`;
+		}
+
+		nextSlide() {
+			const nextIndex = (this.currentSlide + 1) % this.slides.length;
+			this.goToSlide(nextIndex);
+		}
+	}
+
+	// Initialize carousel when DOM is loaded
+	document.addEventListener('DOMContentLoaded', () => {
+		new PhotoCarousel();
+	});
+</script>

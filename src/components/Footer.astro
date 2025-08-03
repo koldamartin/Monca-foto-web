@@ -1,0 +1,170 @@
+---
+
+---
+
+<footer class="footer">
+	<div class="footer-background"></div>
+	<div class="footer-content">
+		<div class="contact-info">
+			<h3>Kontakt</h3>
+			<div class="contact-details">
+				<p>Monika Musilová</p>
+				<p>Svatební fotografka</p>
+				<p>Email: info@monikamusilova.cz</p>
+				<p>Telefon: +420 123 456 789</p>
+				<p>IČO: 12345678</p>
+			</div>
+		</div>
+		
+		<div class="developer-info">
+			<p>Webové stránky vytvořil:</p>
+			<a href="https://linkedin.com/in/developer-profile" target="_blank" rel="noopener" class="developer-link">
+				<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="linkedin-icon">
+					<path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+					<rect x="2" y="9" width="4" height="12"></rect>
+					<circle cx="4" cy="4" r="2"></circle>
+				</svg>
+				Martin Developer
+			</a>
+		</div>
+	</div>
+</footer>
+
+<style>
+	.footer {
+		position: relative;
+		background-image: url('https://images.unsplash.com/photo-1522673607200-164d1b6ce486?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+		background-size: cover;
+		background-position: center;
+		background-attachment: fixed;
+		padding: 4rem 0 2rem;
+		color: #FFFFFF;
+	}
+
+	.footer::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: rgba(0, 0, 0, 0.7);
+		z-index: 1;
+	}
+
+	.footer-content {
+		position: relative;
+		z-index: 10;
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 0 2rem;
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-start;
+		gap: 3rem;
+	}
+
+	.contact-info h3 {
+		font-size: 1.5rem;
+		font-weight: 700;
+		margin-bottom: 1.5rem;
+		color: #FFD100;
+		text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+	}
+
+	.contact-details p {
+		margin-bottom: 0.5rem;
+		font-size: 1rem;
+		line-height: 1.6;
+		text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+	}
+
+	.contact-details p:first-child {
+		font-weight: 700;
+		font-size: 1.1rem;
+		margin-bottom: 0.3rem;
+	}
+
+	.developer-info {
+		text-align: right;
+		font-size: 0.9rem;
+	}
+
+	.developer-info p {
+		margin-bottom: 0.5rem;
+		text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+	}
+
+	.developer-link {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.5rem;
+		color: #FFFFFF;
+		text-decoration: none;
+		font-weight: 600;
+		transition: color 0.3s ease;
+		text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+	}
+
+	.developer-link:hover {
+		color: #0077B5;
+	}
+
+	.linkedin-icon {
+		width: 20px;
+		height: 20px;
+		transition: transform 0.3s ease;
+	}
+
+	.developer-link:hover .linkedin-icon {
+		transform: scale(1.1);
+	}
+
+	@media (max-width: 768px) {
+		.footer {
+			padding: 3rem 0 1.5rem;
+			background-attachment: scroll;
+		}
+
+		.footer-content {
+			flex-direction: column;
+			gap: 2rem;
+			padding: 0 1rem;
+		}
+
+		.developer-info {
+			text-align: left;
+		}
+
+		.contact-info h3 {
+			font-size: 1.3rem;
+		}
+
+		.contact-details p {
+			font-size: 0.9rem;
+		}
+	}
+
+	@media (max-width: 480px) {
+		.footer {
+			padding: 2rem 0 1rem;
+		}
+
+		.footer-content {
+			gap: 1.5rem;
+		}
+
+		.contact-info h3 {
+			font-size: 1.2rem;
+			margin-bottom: 1rem;
+		}
+
+		.contact-details p {
+			font-size: 0.85rem;
+		}
+
+		.developer-info {
+			font-size: 0.8rem;
+		}
+	}
+</style>
