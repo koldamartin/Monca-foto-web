@@ -1,0 +1,153 @@
+---
+
+---
+
+<section class="color-palette-section">
+	<div class="palette-container">
+		<div class="greeting">HELLO! I'M ANDREW</div>
+		
+		<h2 class="main-headline">
+			I'M A <span class="sheffield-highlight">SHEFFIELD-BASED</span> <span class="alternative-text">ALTERNATIVE</span> WEDDING PHOTOGRAPHER
+		</h2>
+		
+		<div class="divider-line"></div>
+		
+		<div class="body-content">
+			<p class="description-paragraph">
+				I specialize in <strong>real</strong>, <strong>relaxed</strong>, <span class="highlight-text">alternative wedding photography</span> that captures authentic moments without forced poses. Perfect for unconventional couples who want their unique love story told naturally.
+			</p>
+			
+			<p class="location-paragraph">
+				Based in Sheffield, I serve couples throughout South Yorkshire and across the UK, bringing a fresh perspective to wedding photography that celebrates your individuality.
+			</p>
+		</div>
+	</div>
+</section>
+
+<style>
+	/* Color Palette Section */
+	.color-palette-section {
+		background: #F8F5F0;
+		min-height: 100vh;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 4rem 2rem;
+	}
+
+	.palette-container {
+		max-width: 800px;
+		width: 100%;
+		text-align: center;
+		color: #1C1C1C;
+	}
+
+	.greeting {
+		font-size: 1.5rem;
+		font-weight: 400;
+		letter-spacing: 0.2em;
+		text-transform: uppercase;
+		margin-bottom: 2rem;
+		color: #1C1C1C;
+	}
+
+	.main-headline {
+		font-size: 3.5rem;
+		font-weight: 900;
+		line-height: 1.2;
+		text-transform: uppercase;
+		margin-bottom: 3rem;
+		color: #1C1C1C;
+	}
+
+	.sheffield-highlight {
+		font-weight: 900;
+		position: relative;
+		display: inline-block;
+	}
+
+	.sheffield-highlight::after {
+		content: '';
+		position: absolute;
+		bottom: -8px;
+		left: 0;
+		width: 100%;
+		height: 6px;
+		background: #F4C542;
+		border-radius: 3px;
+	}
+
+	.alternative-text {
+		color: #911B1B;
+		font-weight: 900;
+	}
+
+	.divider-line {
+		width: 100px;
+		height: 1px;
+		background: #1C1C1C;
+		margin: 0 auto 3rem auto;
+	}
+
+	.body-content {
+		max-width: 600px;
+		margin: 0 auto;
+	}
+
+	.description-paragraph,
+	.location-paragraph {
+		font-size: 1.1rem;
+		line-height: 1.6;
+		margin-bottom: 1.5rem;
+		color: #1C1C1C;
+	}
+
+	.description-paragraph strong {
+		font-weight: 700;
+	}
+
+	.highlight-text {
+		position: relative;
+		font-weight: 700;
+	}
+
+	.highlight-text::after {
+		content: '';
+		position: absolute;
+		bottom: -2px;
+		left: 0;
+		width: 100%;
+		height: 3px;
+		background: #F4C542;
+		border-radius: 2px;
+	}
+
+	@media (max-width: 768px) {
+		.color-palette-section {
+			padding: 3rem 1.5rem;
+		}
+		
+		.greeting {
+			font-size: 1.2rem;
+		}
+		
+		.main-headline {
+			font-size: 2.5rem;
+		}
+		
+		.description-paragraph,
+		.location-paragraph {
+			font-size: 1rem;
+		}
+	}
+
+	@media (max-width: 480px) {
+		.main-headline {
+			font-size: 2rem;
+		}
+		
+		.greeting {
+			font-size: 1rem;
+		}
+	}
+</style>
