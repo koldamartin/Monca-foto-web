@@ -20,16 +20,85 @@
 		</div>
 	</div>
 	
-	<div class="testimonial-section">
-		<div class="background-image"></div>
-		<div class="testimonial-overlay">
-			<div class="testimonial-content">
-				<blockquote class="testimonial-quote">
-					"Monika zachytila naši svatbu způsobem, který překonal všechna naše očekávání. Každá fotografie vypráví příběh a my se do těch okamžiků vracíme znovu a znovu."
-				</blockquote>
-				<cite class="testimonial-attribution">— Jana & Tomáš, svatba 2023</cite>
+	<div class="parallax-section">
+		<div class="testimonial-section">
+			<div class="testimonial-overlay">
+				<div class="testimonial-content">
+					<blockquote class="testimonial-quote">
+						"Monika zachytila naši svatbu způsobem, který překonal všechna naše očekávání. Každá fotografie vypráví příběh a my se do těch okamžiků vracíme znovu a znovu."
+					</blockquote>
+					<cite class="testimonial-attribution">— Jana & Tomáš, svatba 2023</cite>
+				</div>
 			</div>
 		</div>
+
+		<div class="contact-footer" id="contact">
+		<div class="contact-container">
+			<div class="contact-info">
+				<h2>Kontakt</h2>
+				<div class="contact-details">
+					<div class="contact-item">
+						<svg class="contact-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+							<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+							<circle cx="12" cy="10" r="3"></circle>
+						</svg>
+						<div>
+							<p>Monika Musilová</p>
+							<p>Svatební fotografka</p>
+						</div>
+					</div>
+					<div class="contact-item">
+						<svg class="contact-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+							<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+						</svg>
+						<p>+420 123 456 789</p>
+					</div>
+					<div class="contact-item">
+						<svg class="contact-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+							<path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+							<polyline points="22,6 12,13 2,6"></polyline>
+						</svg>
+						<p>info@monikamusilova.cz</p>
+					</div>
+					<div class="contact-item">
+						<svg class="contact-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+							<circle cx="12" cy="12" r="10"></circle>
+							<line x1="2" y1="12" x2="22" y2="12"></line>
+							<path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+						</svg>
+						<p>monikamusilova.cz</p>
+					</div>
+					<div class="contact-item">
+						<p class="ico-text">IČO: 12345678</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="contact-form-wrapper">
+				<h2>Napište mi</h2>
+				<form name="contact" method="POST" data-netlify="true" class="contact-form" id="contactForm">
+					<input type="hidden" name="form-name" value="contact" />
+					<div class="form-group">
+						<label for="name" class="form-label">Vaše jméno</label>
+						<input type="text" name="name" id="name" placeholder="Vaše jméno" required />
+					</div>
+					<div class="form-group">
+						<label for="email" class="form-label">Váš email</label>
+						<input type="email" name="email" id="email" placeholder="Váš email" required />
+					</div>
+					<div class="form-group">
+						<label for="subject" class="form-label">Předmět</label>
+						<input type="text" name="subject" id="subject" placeholder="Předmět zprávy" />
+					</div>
+					<div class="form-group">
+						<label for="message" class="form-label">Vaše zpráva</label>
+						<textarea name="message" id="message" placeholder="Vaše zpráva" rows="4" required></textarea>
+					</div>
+					<button type="submit" class="submit-btn">Odeslat zprávu</button>
+				</form>
+			</div>
+		</div>
+	</div>
 	</div>
 </section>
 
@@ -43,6 +112,15 @@
 		background: #F8F5F0;
 		padding: 0 2rem 7.5rem;
 		position: relative;
+	}
+
+	.parallax-section {
+		position: relative;
+		background-image: url('https://images.unsplash.com/photo-1606800052052-a08af7148866?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+		background-size: cover;
+		background-position: center;
+		background-attachment: fixed;
+		background-repeat: no-repeat;
 	}
 
 	.stats-grid {
@@ -76,25 +154,12 @@
 
 	.testimonial-section {
 		position: relative;
-		height: 75vh;
+		height: 60vh;
 		width: 100%;
 		display: flex;
 		align-items: center;
 		justify-content: center;
 		overflow: hidden;
-	}
-
-	.background-image {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		background-image: url('https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
-		background-size: cover;
-		background-position: center;
-		background-repeat: no-repeat;
-		z-index: 1;
 	}
 
 	.testimonial-overlay {
@@ -134,6 +199,168 @@
 		display: block;
 	}
 
+	.contact-footer {
+		position: relative;
+		padding: 4rem 2rem;
+		font-family: system-ui, -apple-system, sans-serif;
+	}
+
+	.contact-footer::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: rgba(168, 213, 186, 0.9);
+		z-index: 1;
+	}
+
+	.contact-container {
+		position: relative;
+		z-index: 2;
+		max-width: 1200px;
+		margin: 0 auto;
+		display: flex;
+		gap: 3rem;
+		align-items: flex-start;
+	}
+
+	.contact-info {
+		flex: 1;
+		color: #000000;
+	}
+
+	.contact-info h2 {
+		font-size: 1.5rem;
+		font-weight: 600;
+		margin-bottom: 1.5rem;
+		color: #000000;
+	}
+
+	.contact-details {
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+	}
+
+	.contact-item {
+		display: flex;
+		align-items: flex-start;
+		gap: 0.75rem;
+	}
+
+	.contact-icon {
+		width: 1rem;
+		height: 1rem;
+		color: #000000;
+		margin-top: 0.125rem;
+		flex-shrink: 0;
+	}
+
+	.contact-item p {
+		font-size: 0.875rem;
+		line-height: 1.5;
+		margin: 0;
+		color: #000000;
+	}
+
+	.contact-item div p:first-child {
+		font-weight: 600;
+		margin-bottom: 0.25rem;
+	}
+
+	.ico-text {
+		font-size: 0.875rem;
+		color: #000000;
+		margin-left: 1.75rem;
+	}
+
+	.contact-form-wrapper {
+		flex: 1;
+		background: #ffffff;
+		padding: 2rem;
+		border-radius: 0.75rem;
+		box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+	}
+
+	.contact-form-wrapper h2 {
+		font-size: 1.5rem;
+		font-weight: 600;
+		margin-bottom: 1.5rem;
+		color: #374151;
+	}
+
+	.contact-form {
+		display: flex;
+		flex-direction: column;
+		gap: 1.5rem;
+	}
+
+	.form-group {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+	}
+
+	.form-label {
+		font-size: 0.875rem;
+		font-weight: 500;
+		color: #9ca3af;
+	}
+
+	.form-group input,
+	.form-group textarea {
+		padding: 0.75rem;
+		border: 1px solid #e5e7eb;
+		border-radius: 0.5rem;
+		font-size: 0.875rem;
+		background-color: #f9fafb;
+		transition: border-color 0.3s ease, box-shadow 0.3s ease;
+		font-family: inherit;
+	}
+
+	.form-group input:focus,
+	.form-group textarea:focus {
+		outline: none;
+		border-color: #3b82f6;
+		box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+		background-color: #ffffff;
+	}
+
+	.form-group textarea {
+		resize: vertical;
+		min-height: 100px;
+	}
+
+	.submit-btn {
+		background-color: #3b82f6;
+		color: #ffffff;
+		padding: 0.75rem 1.5rem;
+		border: none;
+		border-radius: 0.5rem;
+		font-size: 0.875rem;
+		font-weight: 600;
+		cursor: pointer;
+		transition: background-color 0.3s ease, transform 0.2s ease;
+		align-self: flex-start;
+	}
+
+	.submit-btn:hover {
+		background-color: #1d4ed8;
+		transform: translateY(-1px);
+	}
+
+	.submit-btn:active {
+		transform: translateY(0);
+	}
+
+	.submit-btn:disabled {
+		background-color: #9ca3af;
+		cursor: not-allowed;
+		transform: none;
+	}
+
 	@media (min-width: 768px) {
 		.stat-number {
 			font-size: 5rem;
@@ -169,6 +396,36 @@
 		.stats-container {
 			padding: 0 1rem 7.5rem;
 		}
+
+		.contact-footer {
+			padding: 3rem 1rem;
+		}
+
+		.parallax-section {
+			background-attachment: scroll;
+		}
+
+		.contact-container {
+			flex-direction: column;
+			gap: 2rem;
+		}
+
+		.contact-info h2,
+		.contact-form-wrapper h2 {
+			font-size: 1.25rem;
+		}
+
+		.contact-form-wrapper {
+			padding: 1.5rem;
+		}
+
+		.contact-item {
+			gap: 0.5rem;
+		}
+
+		.ico-text {
+			margin-left: 1.25rem;
+		}
 	}
 
 	@media (max-width: 480px) {
@@ -186,6 +443,32 @@
 		
 		.stats-container {
 			padding: 0 1rem 7.5rem;
+		}
+
+		.contact-footer {
+			padding: 2rem 1rem;
+		}
+
+		.contact-container {
+			gap: 1.5rem;
+		}
+
+		.contact-form-wrapper {
+			padding: 1rem;
+		}
+
+		.contact-info h2,
+		.contact-form-wrapper h2 {
+			font-size: 1.125rem;
+			margin-bottom: 1rem;
+		}
+
+		.contact-form {
+			gap: 1rem;
+		}
+
+		.submit-btn {
+			width: 100%;
 		}
 	}
 </style>
@@ -244,5 +527,42 @@
 		}
 	}
 
-	document.addEventListener('DOMContentLoaded', initNumberAnimation);
+	document.addEventListener('DOMContentLoaded', function() {
+		initNumberAnimation();
+		
+		const form = document.getElementById('contactForm');
+		if (form) {
+			const submitBtn = form.querySelector('.submit-btn');
+			
+			form.addEventListener('submit', function(e) {
+				const name = document.getElementById('name').value.trim();
+				const email = document.getElementById('email').value.trim();
+				const message = document.getElementById('message').value.trim();
+				
+				if (!name || !email || !message) {
+					e.preventDefault();
+					alert('Prosím vyplňte všechna povinná pole.');
+					return false;
+				}
+				
+				const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+				if (!emailRegex.test(email)) {
+					e.preventDefault();
+					alert('Prosím zadejte platnou emailovou adresu.');
+					return false;
+				}
+				
+				submitBtn.disabled = true;
+				submitBtn.textContent = 'Odesílám...';
+			});
+			
+			form.addEventListener('input', function() {
+				const name = document.getElementById('name').value.trim();
+				const email = document.getElementById('email').value.trim();
+				const message = document.getElementById('message').value.trim();
+				
+				submitBtn.disabled = !(name && email && message);
+			});
+		}
+	});
 </script>
