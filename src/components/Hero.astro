@@ -4,44 +4,35 @@
 
 <section class="hero-section">
 	<div class="hero-background"></div>
-	<div class="main-container">
-		<div class="logo">
-			<img src="/musilova_logo.png" alt="Monika Musilová Svatební fotografka logo" class="logo-img" />
+	
+	<header class="header">
+		<div class="header-container">
+			<button class="hamburger" id="hamburger" aria-label="Toggle navigation">
+				<span class="hamburger-line"></span>
+				<span class="hamburger-line"></span>
+				<span class="hamburger-line"></span>
+			</button>
 		</div>
-		
-		<header class="header">
-			<div class="header-container">
-				<button class="hamburger" id="hamburger" aria-label="Toggle navigation">
-					<span class="hamburger-line"></span>
-					<span class="hamburger-line"></span>
-					<span class="hamburger-line"></span>
-				</button>
-			</div>
+		<div class="nav-instagram-wrapper">
 			<nav class="nav" id="nav">
 				<a href="#about">O MNĚ</a>
 				<a href="#portfolio">PORTFOLIO</a>
 				<a href="#pricing">CENÍK</a>
-				<a href="#blog">BLOG</a>
 				<a href="#education">O FOTOGRAFII</a>
 				<a href="#contact">KONTAKT</a>
 			</nav>
-		</header>
-
-		<main class="hero">
-			<div class="hero-content">
-				<h1 class="hero-title">
-					<span class="line-1">SVATEBNÍ FOTOGRAFIE</span>
-					<span class="line-2">S</span>
-					<span class="line-3">OSOBITÝM STYLEM</span>
-				</h1>
+			<div class="instagram-container">
+				<a href="https://instagram.com/yourprofile" class="instagram-btn" target="_blank" rel="noopener" aria-label="Instagram">
+					<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="instagram-logo"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.5" y2="6.5"></line></svg>
+					<span>Instagram</span>
+				</a>
 			</div>
-		</main>
+		</div>
+	</header>
 
-		<div class="instagram-container">
-			<a href="https://instagram.com/yourprofile" class="instagram-btn" target="_blank" rel="noopener" aria-label="Instagram">
-				<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="instagram-logo"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.5" y2="6.5"></line></svg>
-				<span>Instagram</span>
-			</a>
+	<div class="main-container">
+		<div class="logo">
+			<img src="/musilova_logo.png" alt="Monika Musilová Svatební fotografka logo" class="logo-img" />
 		</div>
 	</div>
 </section>
@@ -67,6 +58,20 @@
 		z-index: 1;
 	}
 
+	.header {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		z-index: 20;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		background: transparent;
+		padding: 2rem 0;
+		width: 100%;
+	}
+
 	.main-container {
 		position: relative;
 		z-index: 10;
@@ -83,16 +88,7 @@
 		justify-content: center;
 		align-items: center;
 		width: 100%;
-		flex-shrink: 0;
-	}
-
-	.header {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		background: transparent;
-		flex-shrink: 0;
-		width: 100%;
+		flex: 1;
 	}
 
 	.header-container {
@@ -105,7 +101,7 @@
 	}
 
 	.logo-img {
-		max-width: 320px;
+		max-width: 600px;
 		width: 100%;
 		height: auto;
 		display: block;
@@ -144,6 +140,12 @@
 		transform: rotate(45deg) translate(-5px, -6px);
 	}
 
+	.nav-instagram-wrapper {
+		display: flex;
+		align-items: center;
+		gap: 3rem;
+	}
+
 	.nav {
 		display: flex;
 		gap: 3rem;
@@ -154,7 +156,7 @@
 		color: #FFFFFF;
 		text-decoration: none;
 		font-weight: 400;
-		font-size: 0.9rem;
+		font-size: 1.2rem;
 		letter-spacing: 2px;
 		text-transform: uppercase;
 		transition: opacity 0.3s ease;
@@ -181,8 +183,6 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		width: 100%;
-		flex-shrink: 0;
 	}
 
 	.hero-title {
@@ -263,7 +263,7 @@
 		}
 
 		.logo-img {
-			max-width: 200px;
+			max-width: 400px;
 		}
 
 		.hamburger {
