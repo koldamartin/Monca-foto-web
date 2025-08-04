@@ -5,8 +5,29 @@
 <section class="photo-carousel-section">
 	<div class="carousel-container">
 		<div class="carousel-track" id="carouselTrack">
-			<!-- Slide 1: Wedding Photos -->
-			<div class="carousel-slide active">
+			<!-- Slide 1: Introduction/About -->
+			<div class="carousel-slide active intro-slide">
+				<div class="slide-content">
+					<div class="slide-image">
+						<img src="https://images.unsplash.com/photo-1606216794074-735e91aa2c92?w=600&h=800&fit=crop&crop=faces" alt="Monika Musilová - Fotografka" />
+					</div>
+					<div class="slide-text intro-text">
+						<div class="greeting">Ahoj, jsem fotografka Monika</div>
+						<div class="divider-line"></div>
+						<div class="body-content">
+							<p class="description-paragraph">
+								Specializuji se na <strong>autentickou</strong> a <strong>uvolněnou</strong> <span class="highlight-text">svatební fotografii</span>, která zachycuje skutečné okamžiky bez nucených póz. Ideální pro páry, které chtějí svůj jedinečný příběh vyprávět přirozeně.
+							</p>
+							<p class="location-paragraph">
+								Působím po celé České republice a ráda zachytím vaši svatbu tak, aby odrážela vaši osobnost a jedinečnost.
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Slide 2: Wedding Photos -->
+			<div class="carousel-slide">
 				<div class="slide-content">
 					<div class="slide-image">
 						<img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=600&h=800&fit=crop&crop=faces" alt="Svatební fotografie" />
@@ -19,7 +40,7 @@
 				</div>
 			</div>
 
-			<!-- Slide 2: Couples Photos -->
+			<!-- Slide 3: Couples Photos -->
 			<div class="carousel-slide">
 				<div class="slide-content">
 					<div class="slide-image">
@@ -33,7 +54,7 @@
 				</div>
 			</div>
 
-			<!-- Slide 3: Family & Kids Photos -->
+			<!-- Slide 4: Family & Kids Photos -->
 			<div class="carousel-slide">
 				<div class="slide-content">
 					<div class="slide-image">
@@ -53,6 +74,7 @@
 			<button class="dot active" data-slide="0"></button>
 			<button class="dot" data-slide="1"></button>
 			<button class="dot" data-slide="2"></button>
+			<button class="dot" data-slide="3"></button>
 		</div>
 	</div>
 </section>
@@ -60,13 +82,11 @@
 <style>
 	.photo-carousel-section {
 		background: #F8F5F0;
-		padding: 0 2rem 6rem 2rem;
-		min-height: 100vh;
+		padding: 4rem 2rem 0 2rem;
 		display: flex;
 		align-items: center;
 		justify-content: center;
 		margin: 0;
-		margin-top: -12rem;
 		font-family: 'Times New Roman', serif;
 	}
 
@@ -81,11 +101,11 @@
 	.carousel-track {
 		display: flex;
 		transition: transform 0.6s ease-in-out;
-		width: 300%;
+		width: 400%;
 	}
 
 	.carousel-slide {
-		width: 33.333%;
+		width: 25%;
 		flex-shrink: 0;
 		opacity: 0;
 		transition: opacity 0.6s ease-in-out;
@@ -172,7 +192,7 @@
 
 	@media (max-width: 768px) {
 		.photo-carousel-section {
-			padding: 4rem 1.5rem;
+			padding: 4rem 1.5rem 0;
 		}
 
 		.slide-content {
@@ -196,6 +216,66 @@
 
 		.slide-text p {
 			font-size: 1rem;
+		}
+	}
+
+	/* Intro slide specific styles */
+	.intro-slide .slide-text {
+		text-align: center;
+	}
+
+	.intro-slide .greeting {
+		font-size: 3.5rem;
+		font-weight: 400;
+		text-transform: none;
+		margin-bottom: 2rem;
+		color: #A8D5BA;
+		font-family: 'Allura', cursive;
+	}
+
+	.intro-slide .divider-line {
+		width: 100px;
+		height: 1px;
+		background: #1C1C1C;
+		margin: 0 auto 1.5rem auto;
+	}
+
+	.intro-slide .body-content {
+		max-width: 600px;
+		margin: 0 auto;
+	}
+
+	.intro-slide .description-paragraph,
+	.intro-slide .location-paragraph {
+		font-size: 1.1rem;
+		line-height: 1.6;
+		margin-bottom: 1.5rem;
+		color: #1C1C1C;
+	}
+
+	.intro-slide .description-paragraph strong {
+		font-weight: 700;
+	}
+
+	.intro-slide .highlight-text {
+		position: relative;
+		font-weight: 700;
+	}
+
+	@media (max-width: 768px) {
+		.intro-slide .greeting {
+			font-size: 2rem;
+		}
+		
+		.intro-slide .description-paragraph,
+		.intro-slide .location-paragraph {
+			font-size: 1rem;
+		}
+	}
+
+	@media (max-width: 480px) {
+		.intro-slide .greeting {
+			font-size: 1.8rem;
 		}
 	}
 
@@ -246,7 +326,7 @@
 			this.dots[this.currentSlide].classList.add('active');
 
 			// Move the track
-			const translateX = -slideIndex * 33.333;
+			const translateX = -slideIndex * 25;
 			this.track.style.transform = `translateX(${translateX}%)`;
 		}
 
