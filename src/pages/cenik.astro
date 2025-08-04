@@ -1,0 +1,455 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+---
+
+<Layout title="Ceník - Monika Musilová Svatební fotografka">
+	<main>
+		<section class="pricing-hero">
+			<div class="hero-background"></div>
+			
+			<Navbar isHomepage={false} />
+			
+			<div class="hero-content">
+				<h1 class="hero-title">Ceník</h1>
+				<p class="hero-subtitle">Transparentní ceny pro vaše nezapomenutelné okamžiky</p>
+			</div>
+		</section>
+
+		<section class="pricing-section">
+			<div class="pricing-container">
+				<div class="pricing-grid">
+					<div class="pricing-card featured">
+						<div class="card-header">
+							<h2 class="card-title">Svatební focení</h2>
+							<div class="card-badge">Nejoblíbenější</div>
+						</div>
+						<div class="card-price">
+							<span class="price-amount">15 000</span>
+							<span class="price-currency">Kč</span>
+						</div>
+						<div class="card-features">
+							<ul class="features-list">
+								<li>Celý svatební den</li>
+								<li>Neomezený počet fotografií</li>
+								<li>Profesionální úprava všech snímků</li>
+								<li>Online galerie pro hosty</li>
+								<li>Dodání do 4 týdnů</li>
+								<li>Osobní konzultace před svatbou</li>
+							</ul>
+						</div>
+						<div class="card-footer">
+							<a href="#contact" class="cta-button primary">Rezervovat termín</a>
+						</div>
+					</div>
+
+					<div class="pricing-card">
+						<div class="card-header">
+							<h2 class="card-title">Ostatní focení</h2>
+						</div>
+						<div class="card-price">
+							<span class="price-text">Dle domluvy</span>
+						</div>
+						<div class="card-features">
+							<ul class="features-list">
+								<li>Portrétní focení</li>
+								<li>Rodinné focení</li>
+								<li>Těhotenské focení</li>
+								<li>Dětské focení</li>
+								<li>Párové focení</li>
+								<li>Firemní focení</li>
+							</ul>
+						</div>
+						<div class="card-footer">
+							<a href="#contact" class="cta-button secondary">Poptat cenu</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="pricing-info">
+					<div class="info-content">
+						<h3 class="info-title">Co je zahrnuto v ceně</h3>
+						<div class="info-grid">
+							<div class="info-item">
+								<div class="info-icon">📸</div>
+								<h4>Profesionální vybavení</h4>
+								<p>Používám pouze špičkové fotografické vybavení pro nejlepší výsledky</p>
+							</div>
+							<div class="info-item">
+								<div class="info-icon">✨</div>
+								<h4>Profesionální úprava</h4>
+								<p>Každá fotografie je pečlivě upravena pro dokonalý výsledek</p>
+							</div>
+							<div class="info-item">
+								<div class="info-icon">☁️</div>
+								<h4>Online galerie</h4>
+								<p>Bezpečné uložení a snadné sdílení s rodinou a přáteli</p>
+							</div>
+							<div class="info-item">
+								<div class="info-icon">🤝</div>
+								<h4>Osobní přístup</h4>
+								<p>Individuální konzultace a přizpůsobení vašim potřebám</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+</Layout>
+
+
+
+<style>
+	.pricing-hero {
+		position: relative;
+		height: 30vh;
+		min-height: 200px;
+		background-image: url('https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+		background-size: cover;
+		background-position: center;
+		background-attachment: fixed;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.hero-background::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: rgba(0, 0, 0, 0.5);
+		z-index: 1;
+	}
+
+
+
+	.hero-content {
+		position: relative;
+		z-index: 2;
+		text-align: center;
+		color: white;
+		max-width: 800px;
+		padding: 0 2rem;
+	}
+
+	.hero-title {
+		font-size: 4rem;
+		font-weight: 900;
+		margin-bottom: 1rem;
+		text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
+		line-height: 1.1;
+	}
+
+	.hero-subtitle {
+		font-size: 1.25rem;
+		font-weight: 400;
+		opacity: 0.9;
+		text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+	}
+
+	.pricing-section {
+		background: #F8F5F0;
+		padding: 5rem 0;
+	}
+
+	.pricing-container {
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 0 2rem;
+	}
+
+	.pricing-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+		gap: 2rem;
+		margin-bottom: 4rem;
+	}
+
+	.pricing-card {
+		background: white;
+		border-radius: 1rem;
+		padding: 2.5rem;
+		box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+		transition: transform 0.3s ease, box-shadow 0.3s ease;
+		position: relative;
+		overflow: hidden;
+	}
+
+	.pricing-card:hover {
+		transform: translateY(-5px);
+		box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+	}
+
+	.pricing-card.featured {
+		border: 3px solid #A8D5BA;
+		transform: scale(1.05);
+	}
+
+	.pricing-card.featured:hover {
+		transform: scale(1.05) translateY(-5px);
+	}
+
+	.card-header {
+		position: relative;
+		margin-bottom: 2rem;
+	}
+
+	.card-title {
+		font-size: 1.75rem;
+		font-weight: 700;
+		color: #333;
+		margin-bottom: 0.5rem;
+	}
+
+	.card-badge {
+		position: absolute;
+		top: -2.5rem;
+		right: -2.5rem;
+		background: #A8D5BA;
+		color: white;
+		padding: 0.5rem 1rem;
+		border-radius: 0.5rem;
+		font-size: 0.875rem;
+		font-weight: 600;
+		transform: rotate(15deg);
+	}
+
+	.card-price {
+		text-align: center;
+		margin-bottom: 2rem;
+		padding: 1.5rem 0;
+		border-bottom: 2px solid #f0f0f0;
+	}
+
+	.price-amount {
+		font-size: 3.5rem;
+		font-weight: 800;
+		color: #A8D5BA;
+		line-height: 1;
+	}
+
+	.price-currency {
+		font-size: 1.5rem;
+		font-weight: 600;
+		color: #A8D5BA;
+		margin-left: 0.5rem;
+	}
+
+	.price-text {
+		font-size: 2rem;
+		font-weight: 700;
+		color: #A8D5BA;
+	}
+
+	.card-features {
+		margin-bottom: 2rem;
+	}
+
+	.features-list {
+		list-style: none;
+		padding: 0;
+	}
+
+	.features-list li {
+		padding: 0.75rem 0;
+		border-bottom: 1px solid #f0f0f0;
+		position: relative;
+		padding-left: 2rem;
+		color: #555;
+		font-weight: 500;
+	}
+
+	.features-list li:last-child {
+		border-bottom: none;
+	}
+
+	.features-list li::before {
+		content: '✓';
+		position: absolute;
+		left: 0;
+		color: #A8D5BA;
+		font-weight: bold;
+		font-size: 1.2rem;
+	}
+
+	.card-footer {
+		text-align: center;
+	}
+
+	.cta-button {
+		display: inline-block;
+		padding: 1rem 2rem;
+		border-radius: 0.5rem;
+		text-decoration: none;
+		font-weight: 600;
+		font-size: 1.1rem;
+		transition: all 0.3s ease;
+		border: 2px solid transparent;
+	}
+
+	.cta-button.primary {
+		background: #A8D5BA;
+		color: white;
+		border-color: #A8D5BA;
+	}
+
+	.cta-button.primary:hover {
+		background: transparent;
+		color: #A8D5BA;
+		border-color: #A8D5BA;
+	}
+
+	.cta-button.secondary {
+		background: transparent;
+		color: #A8D5BA;
+		border-color: #A8D5BA;
+	}
+
+	.cta-button.secondary:hover {
+		background: #A8D5BA;
+		color: white;
+	}
+
+	.pricing-info {
+		background: white;
+		border-radius: 1rem;
+		padding: 3rem;
+		box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+	}
+
+	.info-content {
+		max-width: 800px;
+		margin: 0 auto;
+		text-align: center;
+	}
+
+	.info-title {
+		font-size: 2.5rem;
+		font-weight: 700;
+		color: #333;
+		margin-bottom: 3rem;
+	}
+
+	.info-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+		gap: 2rem;
+	}
+
+	.info-item {
+		text-align: center;
+		padding: 1.5rem;
+	}
+
+	.info-icon {
+		font-size: 3rem;
+		margin-bottom: 1rem;
+	}
+
+	.info-item h4 {
+		font-size: 1.25rem;
+		font-weight: 600;
+		color: #333;
+		margin-bottom: 0.75rem;
+	}
+
+	.info-item p {
+		color: #666;
+		line-height: 1.6;
+	}
+
+	@media (max-width: 768px) {
+
+		.hero-title {
+			font-size: 2.5rem;
+		}
+
+		.hero-subtitle {
+			font-size: 1.1rem;
+		}
+
+		.pricing-section {
+			padding: 3rem 0;
+		}
+
+		.pricing-container {
+			padding: 0 1rem;
+		}
+
+		.pricing-grid {
+			grid-template-columns: 1fr;
+			gap: 1.5rem;
+		}
+
+		.pricing-card.featured {
+			transform: none;
+		}
+
+		.pricing-card.featured:hover {
+			transform: translateY(-5px);
+		}
+
+		.pricing-card {
+			padding: 2rem;
+		}
+
+		.price-amount {
+			font-size: 2.5rem;
+		}
+
+		.price-currency {
+			font-size: 1.25rem;
+		}
+
+		.price-text {
+			font-size: 1.5rem;
+		}
+
+		.info-title {
+			font-size: 2rem;
+		}
+
+		.pricing-info {
+			padding: 2rem;
+		}
+
+		.info-grid {
+			grid-template-columns: 1fr;
+			gap: 1.5rem;
+		}
+
+		.pricing-hero {
+			background-attachment: scroll;
+		}
+	}
+
+	@media (max-width: 480px) {
+		.hero-title {
+			font-size: 2rem;
+		}
+
+		.hero-content {
+			padding: 0 1rem;
+		}
+
+		.pricing-card {
+			padding: 1.5rem;
+		}
+
+		.card-title {
+			font-size: 1.5rem;
+		}
+
+		.price-amount {
+			font-size: 2rem;
+		}
+
+		.info-title {
+			font-size: 1.75rem;
+		}
+	}
+</style>
