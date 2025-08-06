@@ -5,11 +5,9 @@ import Navbar from '../components/Navbar.astro';
 
 <Layout title="Ceník - Monika Musilová Svatební fotografka">
 	<main>
+		<Navbar isHomepage={false} showInstagram={false} hasPhotoBackground={false} />
+		
 		<section class="pricing-hero">
-			<div class="hero-background"></div>
-			
-			<Navbar isHomepage={false} />
-			
 			<div class="hero-content">
 				<h1 class="hero-title">Ceník</h1>
 				<p class="hero-subtitle">Transparentní ceny pro vaše nezapomenutelné okamžiky</p>
@@ -103,35 +101,18 @@ import Navbar from '../components/Navbar.astro';
 <style>
 	.pricing-hero {
 		position: relative;
-		height: 30vh;
-		min-height: 200px;
-		background-image: url('https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
-		background-size: cover;
-		background-position: center;
-		background-attachment: fixed;
+		padding: 6rem 0 4rem 0;
+		background: #F8F5F0;
 		display: flex;
 		align-items: center;
 		justify-content: center;
 	}
 
-	.hero-background::before {
-		content: '';
-		position: absolute;
-		top: 0;
-		left: 0;
-		right: 0;
-		bottom: 0;
-		background: rgba(0, 0, 0, 0.5);
-		z-index: 1;
-	}
-
 
 
 	.hero-content {
-		position: relative;
-		z-index: 2;
 		text-align: center;
-		color: white;
+		color: #333;
 		max-width: 800px;
 		padding: 0 2rem;
 	}
@@ -140,15 +121,14 @@ import Navbar from '../components/Navbar.astro';
 		font-size: 4rem;
 		font-weight: 900;
 		margin-bottom: 1rem;
-		text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
 		line-height: 1.1;
+		color: #333;
 	}
 
 	.hero-subtitle {
 		font-size: 1.25rem;
 		font-weight: 400;
-		opacity: 0.9;
-		text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+		color: #666;
 	}
 
 	.pricing-section {
@@ -363,6 +343,9 @@ import Navbar from '../components/Navbar.astro';
 	}
 
 	@media (max-width: 768px) {
+		.pricing-hero {
+			padding: 5rem 0 3rem 0;
+		}
 
 		.hero-title {
 			font-size: 2.5rem;
@@ -422,9 +405,7 @@ import Navbar from '../components/Navbar.astro';
 			gap: 1.5rem;
 		}
 
-		.pricing-hero {
-			background-attachment: scroll;
-		}
+
 	}
 
 	@media (max-width: 480px) {
