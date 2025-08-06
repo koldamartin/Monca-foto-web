@@ -1,0 +1,440 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+---
+
+<Layout title="Portfolio - Monika Musilová Svatební fotografka">
+	<main>
+		<section class="portfolio-hero">
+			<div class="hero-background"></div>
+			
+			<Navbar isHomepage={false} />
+			
+			<div class="hero-content">
+				<h1 class="hero-title">Portfolio</h1>
+				<p class="hero-subtitle">Zachycené okamžiky plné emocí a krásy</p>
+			</div>
+		</section>
+
+		<section class="gallery-section">
+			<div class="gallery-container">
+				<div class="gallery-grid" id="gallery">
+					<div class="gallery-item" data-index="0">
+						<img src="https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Wedding couple" loading="lazy">
+						<div class="gallery-overlay">
+							<div class="overlay-content">
+								<span class="view-text">Zobrazit</span>
+							</div>
+						</div>
+					</div>
+					
+					<div class="gallery-item" data-index="1">
+						<img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Family portrait" loading="lazy">
+						<div class="gallery-overlay">
+							<div class="overlay-content">
+								<span class="view-text">Zobrazit</span>
+							</div>
+						</div>
+					</div>
+					
+					<div class="gallery-item" data-index="2">
+						<img src="https://images.unsplash.com/photo-1606216794074-735e91aa2c92?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Wedding ceremony" loading="lazy">
+						<div class="gallery-overlay">
+							<div class="overlay-content">
+								<span class="view-text">Zobrazit</span>
+							</div>
+						</div>
+					</div>
+					
+					<div class="gallery-item" data-index="3">
+						<img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Family with children" loading="lazy">
+						<div class="gallery-overlay">
+							<div class="overlay-content">
+								<span class="view-text">Zobrazit</span>
+							</div>
+						</div>
+					</div>
+					
+					<div class="gallery-item" data-index="4">
+						<img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Wedding dance" loading="lazy">
+						<div class="gallery-overlay">
+							<div class="overlay-content">
+								<span class="view-text">Zobrazit</span>
+							</div>
+						</div>
+					</div>
+					
+					<div class="gallery-item" data-index="5">
+						<img src="https://images.unsplash.com/photo-1609220136736-443140cffec6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Family outdoor" loading="lazy">
+						<div class="gallery-overlay">
+							<div class="overlay-content">
+								<span class="view-text">Zobrazit</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Lightbox Modal -->
+		<div class="lightbox" id="lightbox">
+			<div class="lightbox-content">
+				<button class="lightbox-close" id="lightbox-close">&times;</button>
+				<img class="lightbox-image" id="lightbox-image" src="" alt="">
+				<div class="lightbox-nav">
+					<button class="lightbox-prev" id="lightbox-prev">&#8249;</button>
+					<button class="lightbox-next" id="lightbox-next">&#8250;</button>
+				</div>
+			</div>
+		</div>
+	</main>
+</Layout>
+
+<script>
+	document.addEventListener('DOMContentLoaded', function() {
+		const galleryItems = document.querySelectorAll('.gallery-item');
+		const lightbox = document.getElementById('lightbox');
+		const lightboxImage = document.getElementById('lightbox-image');
+		const lightboxClose = document.getElementById('lightbox-close');
+		const lightboxPrev = document.getElementById('lightbox-prev');
+		const lightboxNext = document.getElementById('lightbox-next');
+		
+		let currentIndex = 0;
+		const images = [
+			'https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80',
+			'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80',
+			'https://images.unsplash.com/photo-1606216794074-735e91aa2c92?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80',
+			'https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80',
+			'https://images.unsplash.com/photo-1583939003579-730e3918a45a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80',
+			'https://images.unsplash.com/photo-1609220136736-443140cffec6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80'
+		];
+
+		function openLightbox(index) {
+			currentIndex = index;
+			lightboxImage.src = images[currentIndex];
+			lightbox.style.display = 'flex';
+			document.body.style.overflow = 'hidden';
+		}
+
+		function closeLightbox() {
+			lightbox.style.display = 'none';
+			document.body.style.overflow = 'auto';
+		}
+
+		function showNext() {
+			currentIndex = (currentIndex + 1) % images.length;
+			lightboxImage.src = images[currentIndex];
+		}
+
+		function showPrev() {
+			currentIndex = (currentIndex - 1 + images.length) % images.length;
+			lightboxImage.src = images[currentIndex];
+		}
+
+		galleryItems.forEach((item, index) => {
+			item.addEventListener('click', () => openLightbox(index));
+		});
+
+		lightboxClose.addEventListener('click', closeLightbox);
+		lightboxNext.addEventListener('click', showNext);
+		lightboxPrev.addEventListener('click', showPrev);
+
+		lightbox.addEventListener('click', (e) => {
+			if (e.target === lightbox) {
+				closeLightbox();
+			}
+		});
+
+		document.addEventListener('keydown', (e) => {
+			if (lightbox.style.display === 'flex') {
+				if (e.key === 'Escape') closeLightbox();
+				if (e.key === 'ArrowRight') showNext();
+				if (e.key === 'ArrowLeft') showPrev();
+			}
+		});
+	});
+</script>
+
+<style>
+	.portfolio-hero {
+		position: relative;
+		height: 30vh;
+		min-height: 200px;
+		background-image: url('https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+		background-size: cover;
+		background-position: center;
+		background-attachment: fixed;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.hero-background::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: rgba(0, 0, 0, 0.5);
+		z-index: 1;
+	}
+
+	.hero-content {
+		position: relative;
+		z-index: 2;
+		text-align: center;
+		color: white;
+		max-width: 800px;
+		padding: 0 2rem;
+	}
+
+	.hero-title {
+		font-size: 4rem;
+		font-weight: 900;
+		margin-bottom: 1rem;
+		text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
+		line-height: 1.1;
+	}
+
+	.hero-subtitle {
+		font-size: 1.25rem;
+		font-weight: 400;
+		opacity: 0.9;
+		text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+	}
+
+	.gallery-section {
+		background: #F8F5F0;
+		padding: 5rem 0;
+	}
+
+	.gallery-container {
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 0 2rem;
+	}
+
+	.gallery-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+		gap: 2rem;
+	}
+
+	.gallery-item {
+		position: relative;
+		aspect-ratio: 4/5;
+		border-radius: 1rem;
+		overflow: hidden;
+		cursor: pointer;
+		transition: transform 0.3s ease, box-shadow 0.3s ease;
+		box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+	}
+
+	.gallery-item:hover {
+		transform: translateY(-10px);
+		box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+	}
+
+	.gallery-item img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		transition: transform 0.3s ease;
+	}
+
+	.gallery-item:hover img {
+		transform: scale(1.05);
+	}
+
+	.gallery-overlay {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: rgba(168, 213, 186, 0.8);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		opacity: 0;
+		transition: opacity 0.3s ease;
+	}
+
+	.gallery-item:hover .gallery-overlay {
+		opacity: 1;
+	}
+
+	.overlay-content {
+		text-align: center;
+		color: white;
+	}
+
+	.view-text {
+		font-size: 1.25rem;
+		font-weight: 600;
+		text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+	}
+
+	.lightbox {
+		display: none;
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: rgba(0, 0, 0, 0.9);
+		z-index: 1000;
+		align-items: center;
+		justify-content: center;
+		animation: fadeIn 0.3s ease;
+	}
+
+	@keyframes fadeIn {
+		from { opacity: 0; }
+		to { opacity: 1; }
+	}
+
+	.lightbox-content {
+		position: relative;
+		max-width: 90vw;
+		max-height: 90vh;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.lightbox-image {
+		max-width: 100%;
+		max-height: 100%;
+		object-fit: contain;
+		border-radius: 0.5rem;
+		box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+	}
+
+	.lightbox-close {
+		position: absolute;
+		top: -50px;
+		right: 0;
+		background: none;
+		border: none;
+		color: white;
+		font-size: 3rem;
+		cursor: pointer;
+		z-index: 1001;
+		transition: color 0.3s ease;
+	}
+
+	.lightbox-close:hover {
+		color: #A8D5BA;
+	}
+
+	.lightbox-nav {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+		pointer-events: none;
+	}
+
+	.lightbox-prev,
+	.lightbox-next {
+		background: rgba(168, 213, 186, 0.8);
+		border: none;
+		color: white;
+		font-size: 2rem;
+		width: 50px;
+		height: 50px;
+		border-radius: 50%;
+		cursor: pointer;
+		transition: background 0.3s ease, transform 0.3s ease;
+		pointer-events: all;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.lightbox-prev:hover,
+	.lightbox-next:hover {
+		background: #A8D5BA;
+		transform: scale(1.1);
+	}
+
+	.lightbox-prev {
+		margin-left: -25px;
+	}
+
+	.lightbox-next {
+		margin-right: -25px;
+	}
+
+	@media (max-width: 768px) {
+		.hero-title {
+			font-size: 2.5rem;
+		}
+
+		.hero-subtitle {
+			font-size: 1.1rem;
+		}
+
+		.gallery-section {
+			padding: 3rem 0;
+		}
+
+		.gallery-container {
+			padding: 0 1rem;
+		}
+
+		.gallery-grid {
+			grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+			gap: 1.5rem;
+		}
+
+		.portfolio-hero {
+			background-attachment: scroll;
+		}
+
+		.lightbox-close {
+			top: -40px;
+			font-size: 2.5rem;
+		}
+
+		.lightbox-prev,
+		.lightbox-next {
+			width: 40px;
+			height: 40px;
+			font-size: 1.5rem;
+		}
+	}
+
+	@media (max-width: 480px) {
+		.hero-title {
+			font-size: 2rem;
+		}
+
+		.hero-content {
+			padding: 0 1rem;
+		}
+
+		.gallery-grid {
+			grid-template-columns: 1fr;
+			gap: 1rem;
+		}
+
+		.gallery-item {
+			aspect-ratio: 3/4;
+		}
+
+		.lightbox-content {
+			max-width: 95vw;
+			max-height: 95vh;
+		}
+
+		.lightbox-close {
+			top: -30px;
+			font-size: 2rem;
+		}
+	}
+</style>
