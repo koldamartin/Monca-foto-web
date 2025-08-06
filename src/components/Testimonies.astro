@@ -1,0 +1,162 @@
+---
+---
+
+<section>
+	<div class="parallax-section">
+		<div class="testimonials-container">
+			<div class="testimonial-section">
+				<div class="testimonial-overlay">
+					<div class="testimonial-content">
+						<blockquote class="testimonial-quote">
+							"Monika zachytila naši svatbu způsobem, který překonal všechna naše očekávání. Každá fotografie vypráví příběh a my se do těch okamžiků vracíme znovu a znovu."
+						</blockquote>
+						<cite class="testimonial-attribution">— Jana & Tomáš, svatba 2023</cite>
+					</div>
+				</div>
+			</div>
+
+			<div class="testimonial-section">
+				<div class="testimonial-overlay">
+					<div class="testimonial-content">
+						<blockquote class="testimonial-quote">
+							"Fotky jsou nádherné a přirozené. Monika nás dokázala skvěle navést a výsledek je přesně takový, jaký jsme si přáli."
+						</blockquote>
+						<cite class="testimonial-attribution">— Petra & Lukáš, zásnuby 2022</cite>
+					</div>
+				</div>
+			</div>
+
+			<div class="testimonial-section">
+				<div class="testimonial-overlay">
+					<div class="testimonial-content">
+						<blockquote class="testimonial-quote">
+							"Profesionální přístup a milá atmosféra po celou dobu focení. Fotografie mají duši a rádi se k nim vracíme."
+						</blockquote>
+						<cite class="testimonial-attribution">— Eva & Michal, rodinné focení 2024</cite>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<style>
+	.parallax-section {
+		position: relative;
+		background-image: url('https://images.unsplash.com/photo-1606800052052-a08af7148866?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+		background-size: cover;
+		background-position: center;
+		background-attachment: fixed;
+		background-repeat: no-repeat;
+		padding: 4rem 2rem;
+	}
+
+	.testimonials-container {
+		display: flex;
+		gap: 2rem;
+		max-width: 1200px;
+		margin: 0 auto;
+		align-items: stretch;
+	}
+
+	.testimonial-section {
+		position: relative;
+		flex: 1;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		overflow: hidden;
+	}
+
+	.testimonial-overlay {
+		position: relative;
+		z-index: 2;
+		width: 100%;
+		height: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 2rem;
+	}
+
+	.testimonial-content {
+		background: rgba(0, 0, 0, 0.6);
+		padding: 2rem;
+		border-radius: 0.5rem;
+		width: 100%;
+		text-align: center;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+
+	.testimonial-quote {
+		color: white;
+		font-size: 1rem;
+		font-style: italic;
+		line-height: 1.5;
+		margin-bottom: 1rem;
+		quotes: none;
+	}
+
+	.testimonial-attribution {
+		color: rgba(255, 255, 255, 0.7);
+		font-size: 0.875rem;
+		font-style: normal;
+		text-align: right;
+		display: block;
+	}
+
+
+	@media (max-width: 768px) {
+		.testimonials-container {
+			flex-direction: column;
+			gap: 1.5rem;
+		}
+
+		.testimonial-content {
+			padding: 1.5rem;
+		}
+		
+		.testimonial-quote {
+			font-size: 0.95rem;
+		}
+	
+		.contact-footer {
+			padding: 3rem 1rem;
+		}
+	
+		.parallax-section {
+			background-attachment: scroll;
+			padding: 3rem 1rem;
+		}
+	
+		.contact-container {
+			flex-direction: column;
+			gap: 2rem;
+		}
+	}
+
+	@media (max-width: 480px) {
+		.testimonial-content {
+			padding: 1rem;
+		}
+		
+		.testimonial-quote {
+			font-size: 0.9rem;
+		}
+		
+		.contact-footer {
+			padding: 2rem 1rem;
+		}
+		
+		.contact-container {
+			gap: 1.5rem;
+		}
+
+		.parallax-section {
+			padding: 2rem 1rem;
+		}
+	}
+</style>

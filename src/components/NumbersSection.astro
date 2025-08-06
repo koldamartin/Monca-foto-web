@@ -1,0 +1,161 @@
+---
+---
+
+<section class="by-the-numbers-section">
+	<div class="stats-container">
+		<div class="stats-grid">
+			<div class="stat-item">
+				<div class="stat-number" data-target="90" data-suffix="+">0+</div>
+				<div class="stat-label">SVATEB VYFOCENO</div>
+			</div>
+			<div class="stat-item">
+				<div class="stat-number" data-target="5">0</div>
+				<div class="stat-label">LET V OBORU</div>
+			</div>
+			<div class="stat-item">
+				<div class="stat-number" data-target="44526">0</div>
+				<div class="stat-label">FOTOGRAFIÍ DODÁNO</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<style>
+	.by-the-numbers-section {
+		position: relative;
+		width: 100%;
+	}
+
+	.stats-container {
+		background: #F8F5F0;
+		padding: 0 2rem 7.5rem;
+		position: relative;
+	}
+
+	.stats-grid {
+		max-width: 1200px;
+		margin: 0 auto;
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 2rem;
+		text-align: center;
+	}
+
+	.stat-item {
+		padding: 2rem 1rem;
+	}
+
+	.stat-number {
+		font-size: 4rem;
+		font-weight: 800;
+		color: #A8D5BA;
+		line-height: 1;
+		margin-bottom: 0.5rem;
+	}
+
+	.stat-label {
+		font-size: 0.875rem;
+		font-weight: 600;
+		color: #A8D5BA;
+		text-transform: uppercase;
+		letter-spacing: 0.1em;
+	}
+
+	@media (min-width: 768px) {
+		.stat-number {
+			font-size: 5rem;
+		}
+		
+		.stats-container {
+			padding: 0 2rem 7.5rem;
+		}
+	}
+
+	@media (max-width: 768px) {
+		.stats-grid {
+			grid-template-columns: 1fr;
+			gap: 1.5rem;
+		}
+		
+		.stat-number {
+			font-size: 3rem;
+		}
+		
+		.stat-label {
+			font-size: 0.75rem;
+		}
+		
+		.stats-container {
+			padding: 0 1rem 7.5rem;
+		}
+	}
+
+	@media (max-width: 480px) {
+		.stat-number {
+			font-size: 2.5rem;
+		}
+		
+		.stats-container {
+			padding: 0 1rem 7.5rem;
+		}
+	}
+</style>
+
+<script>
+	function animateNumber(element, target, duration = 4000) {
+		const start = 0;
+		const startTime = performance.now();
+		const suffix = element.dataset.suffix || '';
+		
+		function update(currentTime) {
+			const elapsed = currentTime - startTime;
+			const progress = Math.min(elapsed / duration, 1);
+			
+			const easeOutQuart = 1 - Math.pow(1 - progress, 4);
+			const current = Math.floor(start + (target - start) * easeOutQuart);
+			
+			if (target === 44526) {
+				element.textContent = current.toLocaleString();
+			} else {
+				element.textContent = current + suffix;
+			}
+			
+			if (progress < 1) {
+				requestAnimationFrame(update);
+			}
+		}
+		
+		requestAnimationFrame(update);
+	}
+
+	function initNumberAnimation() {
+		const statsSection = document.querySelector('.stats-grid');
+		let hasAnimated = false;
+		
+		const observer = new IntersectionObserver((entries) => {
+			entries.forEach(entry => {
+				if (entry.isIntersecting && !hasAnimated) {
+					hasAnimated = true;
+					
+					const statNumbers = entry.target.querySelectorAll('.stat-number');
+					statNumbers.forEach(element => {
+						const target = parseInt(element.dataset.target);
+						animateNumber(element, target);
+					});
+					
+					observer.unobserve(entry.target);
+				}
+			});
+		}, {
+			threshold: 0.5
+		});
+		
+		if (statsSection) {
+			observer.observe(statsSection);
+		}
+	}
+
+	document.addEventListener('DOMContentLoaded', function() {
+		initNumberAnimation();
+	});
+</script>

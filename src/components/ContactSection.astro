@@ -1,37 +1,7 @@
 ---
-
 ---
 
-<section class="by-the-numbers-section">
-	<div class="stats-container">
-		<div class="stats-grid">
-			<div class="stat-item">
-				<div class="stat-number" data-target="90" data-suffix="+">0+</div>
-				<div class="stat-label">SVATEB VYFOCENO</div>
-			</div>
-			<div class="stat-item">
-				<div class="stat-number" data-target="5">0</div>
-				<div class="stat-label">LET V OBORU</div>
-			</div>
-			<div class="stat-item">
-				<div class="stat-number" data-target="44526">0</div>
-				<div class="stat-label">FOTOGRAFIÍ DODÁNO</div>
-			</div>
-		</div>
-	</div>
-	
-	<div class="parallax-section">
-		<div class="testimonial-section">
-			<div class="testimonial-overlay">
-				<div class="testimonial-content">
-					<blockquote class="testimonial-quote">
-						"Monika zachytila naši svatbu způsobem, který překonal všechna naše očekávání. Každá fotografie vypráví příběh a my se do těch okamžiků vracíme znovu a znovu."
-					</blockquote>
-					<cite class="testimonial-attribution">— Jana & Tomáš, svatba 2023</cite>
-				</div>
-			</div>
-		</div>
-
+<section>
 		<div class="contact-footer" id="contact">
 		<div class="contact-container">
 			<div class="contact-info">
@@ -103,17 +73,6 @@
 </section>
 
 <style>
-	.by-the-numbers-section {
-		position: relative;
-		width: 100%;
-	}
-
-	.stats-container {
-		background: #F8F5F0;
-		padding: 0 2rem 7.5rem;
-		position: relative;
-	}
-
 	.parallax-section {
 		position: relative;
 		background-image: url('https://images.unsplash.com/photo-1606800052052-a08af7148866?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
@@ -121,35 +80,6 @@
 		background-position: center;
 		background-attachment: fixed;
 		background-repeat: no-repeat;
-	}
-
-	.stats-grid {
-		max-width: 1200px;
-		margin: 0 auto;
-		display: grid;
-		grid-template-columns: repeat(3, 1fr);
-		gap: 2rem;
-		text-align: center;
-	}
-
-	.stat-item {
-		padding: 2rem 1rem;
-	}
-
-	.stat-number {
-		font-size: 4rem;
-		font-weight: 800;
-		color: #A8D5BA;
-		line-height: 1;
-		margin-bottom: 0.5rem;
-	}
-
-	.stat-label {
-		font-size: 0.875rem;
-		font-weight: 600;
-		color: #A8D5BA;
-		text-transform: uppercase;
-		letter-spacing: 0.1em;
 	}
 
 	.testimonial-section {
@@ -361,112 +291,62 @@
 		transform: none;
 	}
 
-	@media (min-width: 768px) {
-		.stat-number {
-			font-size: 5rem;
-		}
-		
-		.stats-container {
-			padding: 0 2rem 7.5rem;
-		}
-	}
-
 	@media (max-width: 768px) {
-		.stats-grid {
-			grid-template-columns: 1fr;
-			gap: 1.5rem;
-		}
-		
-		.stat-number {
-			font-size: 3rem;
-		}
-		
-		.stat-label {
-			font-size: 0.75rem;
-		}
-		
 		.testimonial-content {
 			padding: 2rem;
 		}
-		
 		.testimonial-quote {
 			font-size: 1.1rem;
 		}
-		
-		.stats-container {
-			padding: 0 1rem 7.5rem;
-		}
-
 		.contact-footer {
 			padding: 3rem 1rem;
 		}
-
 		.parallax-section {
 			background-attachment: scroll;
 		}
-
 		.contact-container {
 			flex-direction: column;
 			gap: 2rem;
 		}
-
 		.contact-info h2,
 		.contact-form-wrapper h2 {
 			font-size: 1.25rem;
 		}
-
 		.contact-form-wrapper {
 			padding: 1.5rem;
 		}
-
 		.contact-item {
 			gap: 0.5rem;
 		}
-
 		.ico-text {
 			margin-left: 1.25rem;
 		}
 	}
 
 	@media (max-width: 480px) {
-		.stat-number {
-			font-size: 2.5rem;
-		}
-		
 		.testimonial-content {
 			padding: 1.5rem;
 		}
-		
 		.testimonial-quote {
 			font-size: 1rem;
 		}
-		
-		.stats-container {
-			padding: 0 1rem 7.5rem;
-		}
-
 		.contact-footer {
 			padding: 2rem 1rem;
 		}
-
 		.contact-container {
 			gap: 1.5rem;
 		}
-
 		.contact-form-wrapper {
 			padding: 1rem;
 		}
-
 		.contact-info h2,
 		.contact-form-wrapper h2 {
 			font-size: 1.125rem;
 			margin-bottom: 1rem;
 		}
-
 		.contact-form {
 			gap: 1rem;
 		}
-
 		.submit-btn {
 			width: 100%;
 		}
@@ -474,93 +354,35 @@
 </style>
 
 <script>
-	function animateNumber(element, target, duration = 4000) {
-		const start = 0;
-		const startTime = performance.now();
-		const suffix = element.dataset.suffix || '';
-		
-		function update(currentTime) {
-			const elapsed = currentTime - startTime;
-			const progress = Math.min(elapsed / duration, 1);
-			
-			const easeOutQuart = 1 - Math.pow(1 - progress, 4);
-			const current = Math.floor(start + (target - start) * easeOutQuart);
-			
-			if (target === 44526) {
-				element.textContent = current.toLocaleString();
-			} else {
-				element.textContent = current + suffix;
-			}
-			
-			if (progress < 1) {
-				requestAnimationFrame(update);
-			}
-		}
-		
-		requestAnimationFrame(update);
-	}
-
-	function initNumberAnimation() {
-		const statsSection = document.querySelector('.stats-grid');
-		let hasAnimated = false;
-		
-		const observer = new IntersectionObserver((entries) => {
-			entries.forEach(entry => {
-				if (entry.isIntersecting && !hasAnimated) {
-					hasAnimated = true;
-					
-					const statNumbers = entry.target.querySelectorAll('.stat-number');
-					statNumbers.forEach(element => {
-						const target = parseInt(element.dataset.target);
-						animateNumber(element, target);
-					});
-					
-					observer.unobserve(entry.target);
-				}
-			});
-		}, {
-			threshold: 0.5
-		});
-		
-		if (statsSection) {
-			observer.observe(statsSection);
-		}
-	}
-
 	document.addEventListener('DOMContentLoaded', function() {
-		initNumberAnimation();
-		
 		const form = document.getElementById('contactForm');
 		if (form) {
 			const submitBtn = form.querySelector('.submit-btn');
-			
 			form.addEventListener('submit', function(e) {
 				const name = document.getElementById('name').value.trim();
 				const email = document.getElementById('email').value.trim();
 				const message = document.getElementById('message').value.trim();
-				
 				if (!name || !email || !message) {
 					e.preventDefault();
 					alert('Prosím vyplňte všechna povinná pole.');
 					return false;
 				}
-				
 				const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 				if (!emailRegex.test(email)) {
 					e.preventDefault();
 					alert('Prosím zadejte platnou emailovou adresu.');
 					return false;
 				}
-				
 				submitBtn.disabled = true;
 				submitBtn.textContent = 'Odesílám...';
+				
+				// Form will be submitted normally to Netlify
+				// No need to prevent default or handle AJAX
 			});
-			
 			form.addEventListener('input', function() {
 				const name = document.getElementById('name').value.trim();
 				const email = document.getElementById('email').value.trim();
 				const message = document.getElementById('message').value.trim();
-				
 				submitBtn.disabled = !(name && email && message);
 			});
 		}
