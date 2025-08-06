@@ -1,12 +1,14 @@
 ---
 export interface Props {
 	isHomepage?: boolean;
+	showInstagram?: boolean;
+	hasPhotoBackground?: boolean;
 }
 
-const { isHomepage = false } = Astro.props;
+const { isHomepage = false, showInstagram = true, hasPhotoBackground = true } = Astro.props;
 ---
 
-<header class="header">
+<header class={`header ${!hasPhotoBackground ? 'no-photo-bg' : ''}`}>
 	<div class="header-container">
 		<button class="hamburger" id="hamburger" aria-label="Toggle navigation">
 			<span class="hamburger-line"></span>
@@ -17,17 +19,18 @@ const { isHomepage = false } = Astro.props;
 	<div class="nav-instagram-wrapper">
 		<nav class="nav" id="nav">
 			<a href={isHomepage ? "#about" : "/#about"}>O MNĚ</a>
-			<a href={isHomepage ? "#portfolio" : "/#portfolio"}>PORTFOLIO</a>
+			<a href="/portfolio">PORTFOLIO</a>
 			<a href="/cenik">CENÍK</a>
-			<a href={isHomepage ? "#education" : "/#education"}>O FOTOGRAFII</a>
 			<a href={isHomepage ? "#contact" : "/#contact"}>KONTAKT</a>
 		</nav>
-		<div class="instagram-container">
-			<a href="https://instagram.com/yourprofile" class="instagram-btn" target="_blank" rel="noopener" aria-label="Instagram">
-				<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="instagram-logo"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.5" y2="6.5"></line></svg>
-				<span>Instagram</span>
-			</a>
-		</div>
+		{showInstagram && (
+			<div class="instagram-container">
+				<a href="https://www.instagram.com/moni_musi_photo_video/" class="instagram-btn" target="_blank" rel="noopener" aria-label="Instagram">
+					<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="instagram-logo"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.5" y2="6.5"></line></svg>
+					<span>Instagram</span>
+				</a>
+			</div>
+		)}
 	</div>
 </header>
 
@@ -44,6 +47,29 @@ const { isHomepage = false } = Astro.props;
 		background: transparent;
 		padding: 2rem 0;
 		width: 100%;
+	}
+
+	.header.no-photo-bg {
+		position: relative;
+		background: #F8F5F0;
+		border-bottom: 1px solid #e0e0e0;
+	}
+
+	.header.no-photo-bg .nav a {
+		color: #333;
+		text-shadow: none;
+	}
+
+	@media (max-width: 768px) {
+		.header.no-photo-bg .nav a {
+			color: #FFFFFF;
+			text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+		}
+	}
+
+	.header.no-photo-bg .hamburger-line {
+		background-color: #333;
+		box-shadow: none;
 	}
 
 	.header-container {
@@ -137,9 +163,9 @@ const { isHomepage = false } = Astro.props;
 	}
 
 	.instagram-btn:hover {
-		background: #fff;
-		color: #E1306C;
-		border-color: #E1306C;
+		background: linear-gradient(45deg, #E4405F, #F56040, #FFDC80);
+		color: white;
+		border-color: transparent;
 	}
 
 	.instagram-logo {
@@ -161,9 +187,9 @@ const { isHomepage = false } = Astro.props;
 		.nav {
 			position: fixed;
 			top: 0;
-			right: -100%;
-			width: 100%;
-			height: 100vh;
+			right: -350px;
+			width: 300px;
+			height: 400px;
 			background: rgba(0, 0, 0, 0.95);
 			flex-direction: column;
 			justify-content: center;
@@ -171,6 +197,8 @@ const { isHomepage = false } = Astro.props;
 			gap: 2rem;
 			transition: right 0.3s ease;
 			z-index: 99;
+			border-radius: 0 0 0 20px;
+			box-shadow: -5px 5px 20px rgba(0, 0, 0, 0.3);
 		}
 
 		.nav.active {
